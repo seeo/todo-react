@@ -20,7 +20,9 @@ class List extends React.Component {
       console.log("rendering");
       return (
         <div className="list">
-          <input onChange={this.changeHandler} value={this.state.word}/>
+          <input onChange={(event) => {this.changeHandler(event)}}
+          value={this.state.word}
+          />
           <button>add item</button>
         </div>
       );
