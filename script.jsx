@@ -13,7 +13,7 @@ class List extends React.Component {
 
 
   changeHandler(event){
-      if (event.target.value.length != 0 && event.target.value.length < 10){
+      if (event.target.value.length != 0 && event.target.value.length < 20){
         event.target.className = "";
         this.setState({word: event.target.value});
         this.setState({ validation: "" })
@@ -74,8 +74,9 @@ class List extends React.Component {
                 <form className="submit-form" onSubmit={(event) => { this.clickHandler(event) }}>
                     <input onChange={(event) => {this.changeHandler(event)}}
                         value={this.state.word}
+                        placeholder="John Wick 3"
                     />
-                    <button type="submit">
+                    <button type="submit" >
                         add item
                     </button>
                 </form>
@@ -85,6 +86,9 @@ class List extends React.Component {
                 <ol>
                     {items}
                 </ol>
+                <p className = "instructions">
+                    Remove items from list by simply clicking on them
+                </p>
             </div>
 
       );

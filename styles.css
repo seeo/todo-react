@@ -13,3 +13,7 @@
 .clickable-removeable{
 	cursor: pointer;
 }
+
+.instructions{
+	font-style: italic;
+}
