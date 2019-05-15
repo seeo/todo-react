@@ -56,11 +56,14 @@ class List extends React.Component {
     const list = this.state.list;
     const items = list.map((item, index)=>{
         return (
-            <li key = {index+item} onClick={this.deleteToDo.bind(this,index)}>
+            <li className = "clickable-removeable" key = {index+item} onClick={this.deleteToDo.bind(this,index)}>
                 {item}
             </li>
         )
     });
+
+      {/* can we actually put a onClick event listener inside the render ({return()}) method?
+    sauce: https://stackoverflow.com/questions/43893508/remove-items-form-the-list-in-react-js */}
 
       console.log("rendering");
       console.log(this.state);

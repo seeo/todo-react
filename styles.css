@@ -9,3 +9,7 @@
 .validation-error-text{
 	color: red
 }
+
+.clickable-removeable{
+	cursor: pointer;
+}
