@@ -1,12 +1,12 @@
 class List extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.changeHandler = this.changeHandler.bind( this );
   }
 
   state = {
     list : [],
-    word : ""
+    word : "",
   }
 
   changeHandler(event){
