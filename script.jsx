@@ -70,7 +70,7 @@ class List extends React.Component {
                         add item
                     </button>
                 </form>
-                <p>
+                <p className= "validation-error-text">
                     {this.state.validation}
                 </p>
                 <ol>
