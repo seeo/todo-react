@@ -1,7 +1,7 @@
 class List extends React.Component {
   constructor(props){
     super(props)
-    //this.changeHandler = this.changeHandler.bind( this );
+    this.changeHandler = this.changeHandler.bind(this);
   }
 
   state = {
@@ -9,6 +9,7 @@ class List extends React.Component {
     word : "",
     validation : ""
   }
+
 
 
   changeHandler(event){
@@ -43,18 +44,23 @@ class List extends React.Component {
     console.log("remove word from state but push...", event.target.value);
   }
 
+  deleteToDo = index =>{
+      console.log(index);
+      const spliceList = this.state.list;
+      spliceList.splice(index, 1)
+      this.setState({spliceList});
+  }
 
   render() {
       // render the list with a map() here
     const list = this.state.list;
     const items = list.map((item, index)=>{
         return (
-            <li key = {index+item}>
+            <li key = {index+item} onClick={this.deleteToDo.bind(this,index)}>
                 {item}
             </li>
         )
     });
-
 
       console.log("rendering");
       console.log(this.state);
