@@ -10,8 +10,6 @@ class List extends React.Component {
     validation : ""
   }
 
-
-
   changeHandler(event){
       if (event.target.value.length != 0 && event.target.value.length < 20){
         event.target.className = "";
@@ -21,7 +19,7 @@ class List extends React.Component {
     }else{
         //the className has been set in external stylesheet
         event.target.className = "validation-error";
-        this.setState({validation: "Please enter at least one character, but less than 10"})
+        this.setState({validation: "Please enter at least one character, but less than 20"})
         console.log("character length issue raised", event.target.value.length);
     }
   }
