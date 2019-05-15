@@ -7,11 +7,22 @@ class List extends React.Component {
   state = {
     list : [],
     word : "",
+    validation : ""
   }
 
-  changeHandler = event => {
-    this.setState({word: event.target.value});
-    console.log("generating changed word...", event.target.value);
+
+  changeHandler(event){
+      if (event.target.value.length != 0 && event.target.value.length < 10){
+        event.target.className = "";
+        this.setState({word: event.target.value});
+        this.setState({ validation: "" })
+        console.log("generating changed word...", event.target.value);
+    }else{
+        //the className has been set in external stylesheet
+        event.target.className = "validation-error";
+        this.setState({validation: "Please enter at least one character, but less than 10"})
+        console.log("character length issue raised", event.target.value.length);
+    }
   }
 
   clickHandler = event =>{
@@ -46,6 +57,7 @@ class List extends React.Component {
 
 
       console.log("rendering");
+      console.log(this.state);
       /*by wrapping the form tag around the input and button tags, and also setting the button type to submit,
       I now have the ability to simply use the Enter/Return key on my keyboard to submit this form */
       return (
@@ -58,6 +70,9 @@ class List extends React.Component {
                         add item
                     </button>
                 </form>
+                <p>
+                    {this.state.validation}
+                </p>
                 <ol>
                     {items}
                 </ol>
