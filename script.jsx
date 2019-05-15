@@ -49,17 +49,18 @@ class List extends React.Component {
       /*by wrapping the form tag around the input and button tags, and also setting the button type to submit,
       I now have the ability to simply use the Enter/Return key on my keyboard to submit this form */
       return (
-
             <div className = "list">
-              <form className="submit-form" onSubmit={(event) => { this.clickHandler(event) }}>
-                <input onChange={(event) => {this.changeHandler(event)}}
-                    value={this.state.word}
-                />
+                <form className="submit-form" onSubmit={(event) => { this.clickHandler(event) }}>
+                    <input onChange={(event) => {this.changeHandler(event)}}
+                        value={this.state.word}
+                    />
                     <button type="submit">
                         add item
                     </button>
                 </form>
-                <ol> {items}</ol>
+                <ol>
+                    {items}
+                </ol>
             </div>
 
       );
