@@ -1,7 +1,7 @@
 class List extends React.Component {
   constructor(props){
     super(props)
-    this.changeHandler = this.changeHandler.bind( this );
+    //this.changeHandler = this.changeHandler.bind( this );
   }
 
   state = {
@@ -9,7 +9,7 @@ class List extends React.Component {
     word : "",
   }
 
-  changeHandler(event){
+  changeHandler = event => {
     this.setState({word:event.target.value});
     console.log("change", event.target.value);
   }
